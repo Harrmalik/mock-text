@@ -88,7 +88,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/mock-text/dev/1500095515519-2017-07-15T05:11:55.519Z/mock-text.zip"
+          "S3Key": "serverless/mock-text/dev/1500101698750-2017-07-15T06:54:58.750Z/mock-text.zip"
         },
         "FunctionName": "mock-text-dev-mockText",
         "Handler": "handler.mockText",
@@ -108,14 +108,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "MockTextLambdaVersion9FfpBcH7wSSbemZDUCwAwnF5kDIvyvxnqReTosN6pc": {
+    "MockTextLambdaVersion4hLEKnYlpINNNrtR8ZmfOyKcAyx7bB1MXVWEZfHasI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "MockTextLambdaFunction"
         },
-        "CodeSha256": "9FfpBcH7wSSbemZDUCwAwnF5kDIvy/vxnqReTosN6pc="
+        "CodeSha256": "4hLEKnYlpINN/NrtR8ZmfOyKcAyx7bB1MXVWEZfHasI="
       }
     }
   },
@@ -137,7 +137,7 @@
     "MockTextLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "MockTextLambdaVersion9FfpBcH7wSSbemZDUCwAwnF5kDIvyvxnqReTosN6pc"
+        "Ref": "MockTextLambdaVersion4hLEKnYlpINNNrtR8ZmfOyKcAyx7bB1MXVWEZfHasI"
       }
     }
   }

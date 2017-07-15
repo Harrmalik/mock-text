@@ -1,7 +1,20 @@
 'use strict';
+function getQueryParams(str) {
+    let qs = str.split('+').join(' ');
+
+    var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs)) {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params
+}
 
 module.exports.mockText = (event, context, callback) => {
-  let userText = event.queryStringParameters.text,
+  let userText = getQueryParams(event.body).text.toLowerCase(),
       textArr = userText.split(''),
       counter = 0,reg = /^[a-z]+$/i;
 
@@ -16,8 +29,15 @@ module.exports.mockText = (event, context, callback) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
-      message: textArr.join('')
-    }),
+        response_type: "in_channel",
+        text: textArr.join(''),
+        attachments: [
+            {
+                image_url: "http://i0.kym-cdn.com/entries/icons/original/000/022/940/spongebobicon.jpg"
+            }
+        ]
+    })
   };
+
   callback(null, response);
 };

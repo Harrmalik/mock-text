@@ -1,0 +1,13 @@
+{
+  "name": "mock-text",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "start": "sls deploy"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2"
+  },
+  "devDependencies": {
+  }
+}
