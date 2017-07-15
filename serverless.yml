@@ -1,0 +1,11 @@
+service: mock-text
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: us-east-1
+
+functions:
+  mockText:
+    handler: handler.mockText
+    description: Returns the user's text as mock text
